@@ -1,0 +1,58 @@
+#addForm{
+    position: absolute;
+    left: 225px;
+    top:188px;
+    display: flex;
+    flex-flow: column;
+}
+
+.addInput{
+    width: 590px;
+    height: 46px;
+    border-radius: 12px;
+    box-sizing: border-box;
+    border: 1px solid #000000;
+    background: #ffffff;
+    margin-bottom: 70px;
+}
+.title{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 18px;
+}
+
+.addBtn{
+   position: absolute;
+    width: 138px;
+    height: 46px;
+    top: 652px;
+    left: 449px;
+    background-color: #4F75C2;
+    border-radius: 12px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo{
+    width: 149px;
+    height: 63px;
+    position: absolute;
+    left: 37px;
+    top: 27px;
+}
+.arrow{
+    width: 26px;
+    position: absolute;
+    top: 58px;
+    left: 225px;
+}
+.returnLink{
+    position: absolute;
+    left: 263px;
+    top: 55px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: bold;
+    font-size: 24px;
+    line-height: 28px;
+    color: #484848;
+}
