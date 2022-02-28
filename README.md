@@ -9,3 +9,4 @@ This is a search engine app.With this app,
 you can find users by users name surname
 you can see users details when you click the button "show more"
 you can add a new user through page that is opend when you click the button "add new record"
+in details page, you can sort users by 	alphabetic and date ascending
