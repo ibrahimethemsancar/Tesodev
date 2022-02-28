@@ -7,8 +7,9 @@ import {
     Link,
     useRouteMatch
 } from "react-router-dom";
-import More from './More'
-import MyContext from '../context/MyContext';
+import More from '../more/More'
+import MyContext from '../../context/MyContext';
+import location from '../location-pin.png'
 function MainPage() {
 
     const {profiles,setProfiles,searchValue,setSearchValue,filtered,setFiltered}=useContext(MyContext)
@@ -45,6 +46,7 @@ function MainPage() {
 
     return (
         <>
+        <a type='button' href='/add' className='addNew'><p >Add new record</p></a>
             <div className='head'>
                 <img src="https://tesodev.github.io/jqueryLite/img/tesodevVector.png" alt="" id='headerImg' />
             </div><br />
@@ -59,26 +61,32 @@ function MainPage() {
                     filtered &&
                     <><div className='listDiv'>
                         <div>
-                            <p className='listCountry'>{filtered[0]?.City}</p>
-                            <p className='listName'>{filtered[0]?.Name_Surname}</p>
-                            <p className='listEmail'>{filtered[0]?.Email}</p>
+                           {filtered[0]? <img src={location} alt="" className='locationIcon' /> : ''} 
+                               <p className='listCountry'>{filtered[0]?.Country}</p>
+                                    <p className='listCity'>{filtered[0]?.City}</p>
+                                    <p className='listEmail'>{filtered[0]?.Name_Surname}</p>
+                                    <p className='listDate'>{filtered[0]?.Date}</p>
 
                         </div>{filtered[0] ? <hr className='hr' /> : ''}
                     </div>
                         <div className='listDiv'>
                             <div>
-                                <p className='listCountry'>{filtered[1]?.City}</p>
-                                <p className='listName'>{filtered[1]?.Name_Surname}</p>
-                                <p className='listEmail'>{filtered[1]?.Email}</p>
+                            {filtered[1]? <img src={location} alt="" className='locationIcon' /> : ''} 
+                            <p className='listCountry'>{filtered[  1]?.Country}</p>
+                                        <p className='listCity'>{filtered[1]?.City}</p>
+                                        <p className='listEmail'>{filtered[1]?.Name_Surname}</p>
+                                        <p className='listDate'>{filtered[1]?.Date}</p>
 
                             </div>{filtered[1] ? <hr className='hr' /> : ''}
                         </div>
 
                         <div className='listDiv'>
                             <div>
-                                <p className='listCountry'>{filtered[2]?.City}</p>
-                                <p className='listName'>{filtered[2]?.Name_Surname}</p>
-                                <p className='listEmail'>{filtered[2]?.Email}</p>
+                            {filtered[2]? <img src={location} alt="" className='locationIcon' /> : ''} 
+                            <p className='listCountry'>{filtered[2]?.Country}</p>
+                                        <p className='listCity'>{filtered[2]?.City}</p>
+                                        <p className='listEmail'>{filtered[2]?.Name_Surname}</p>
+                                        <p className='listDate'>{filtered[2]?.Date}</p>
 
                             </div>{filtered[2] ? <hr className='hr' /> : ''}
                         </div>

@@ -6,20 +6,21 @@ function Add() {
     const [country, setCountry] = useState("");
     const [city, setCity] = useState("");
     const [email, setEmail] = useState("");
-    const [dis, setDis] = useState(false);
+    const [dis, setDis] = useState(true);
     let a =document.getElementsByClassName('addInput')
     const checkForm=()=>{
-      
         for(var i=0;i<a.length;i++){
-            if(a[i].length==0){
-                setDis(false)
-            }
-            else if(a[i].length!=0){
+            if(a[i].value.length==''){
                 setDis(true)
+            }
+            else if(a[i].value.length!=''){
+                setDis(false)
             }
         }
     }
-
+useEffect(()=>{
+    checkForm()
+},[setEmail])
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log("sa");
@@ -83,7 +84,7 @@ function Add() {
                     onChange={(e) => {setEmail(e.target.value);
                     checkForm()}}
                 />
-                <button type="submit" className="addBtn" id="thebtn" disabled={dis} onClick={(e)=>{e.preventDefault();checkForm()}}>
+                <button type="submit" className="addBtn" id="thebtn" disabled={dis}>
                     <p id="">Search</p>
                 </button>
             </form>

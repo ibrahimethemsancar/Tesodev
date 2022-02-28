@@ -1,8 +1,8 @@
 import React, { useContext, useState, useEffect } from 'react'
-import MyContext from '../context/MyContext'
+import MyContext from '../../context/MyContext'
 import './More.css'
 import ReactPaginate from 'react-paginate';
-
+import location from '../location-pin.png'
 export default function More() {
     const { profiles, setProfiles, searchValue, setSearchValue, filtered, setFiltered } = useContext(MyContext);
     //const [orderArray,setOrderArray]=useState([])
@@ -49,7 +49,7 @@ export default function More() {
     }
     const yearAsc= async()=>{
         let myData= await filtered.sort((a,b)=>{
-            return b.Date.localeCompare(a.Date);
+            return b.Date?.localeCompare(a.Date);
 
         });
         console.log(myData)
@@ -57,7 +57,7 @@ export default function More() {
     }
     const yearDesc= async()=>{
         let myData= await filtered.sort((a,b)=>{
-            return a.Date.localeCompare(b.Date);
+            return a.Date?.localeCompare(b.Date);
 
         });
         console.log(myData)
@@ -97,6 +97,7 @@ export default function More() {
                            
                                 <div className='listDiv'>
                                 <div>
+                                {filtered[count]? <img src={location} alt="" className='locationIcon' /> : ''} 
                                     <p className='listCountry'>{filtered[count]?.Country}</p>
                                     <p className='listCity'>{filtered[count]?.City}</p>
                                     <p className='listEmail'>{filtered[count]?.Name_Surname}</p>
@@ -105,24 +106,30 @@ export default function More() {
                                 </div>{filtered[count] ? <hr className='hr' /> : ''}
                             </div><div className='listDiv'>
                                     <div>
-                                        <p className='listCountry'>{filtered[count + 1]?.City}</p>
-                                        <p className='listName'>{filtered[count + 1]?.Name_Surname}</p>
+                                    {filtered[count+1]? <img src={location} alt="" className='locationIcon' /> : ''}
+                                        <p className='listCountry'>{filtered[count + 1]?.Country}</p>
+                                        <p className='listCity'>{filtered[count + 1]?.City}</p>
                                         <p className='listEmail'>{filtered[count + 1]?.Name_Surname}</p>
+                                        <p className='listDate'>{filtered[count + 1]?.Date}</p>
                                         
         
                                     </div>{filtered[count + 1] ? <hr className='hr' /> : ''}
                                 </div><div className='listDiv'>
                                     <div>
-                                        <p className='listCountry'>{filtered[count + 2]?.City}</p>
-                                        <p className='listName'>{filtered[count + 2]?.Name_Surname}</p>
+                                    {filtered[count+2]? <img src={location} alt="" className='locationIcon' /> : ''}
+                                        <p className='listCountry'>{filtered[count + 2]?.Country}</p>
+                                        <p className='listCity'>{filtered[count + 2]?.City}</p>
                                         <p className='listEmail'>{filtered[count + 2]?.Name_Surname}</p>
+                                        <p className='listDate'>{filtered[count + 2]?.Date}</p>
         
                                     </div>{filtered[count + 2] ? <hr className='hr' /> : ''}
                                 </div><div className='listDiv'>
                                     <div>
-                                        <p className='listCountry'>{filtered[count + 3]?.City}</p>
-                                        <p className='listName'>{filtered[count + 3]?.Name_Surname}</p>
+                                    {filtered[count+3]? <img src={location} alt="" className='locationIcon' /> : ''}
+                                        <p className='listCountry'>{filtered[count + 3]?.Country}</p>
+                                        <p className='listCity'>{filtered[count + 3]?.City}</p>
                                         <p className='listEmail'>{filtered[count + 3]?.Name_Surname}</p>
+                                        <p className='listDate'>{filtered[count + 3]?.Date}</p>
         
                                     </div>{filtered[count + 3] ? <hr className='hr' /> : ''}
                                 </div>

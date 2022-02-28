@@ -1,3 +1,6 @@
+body{
+  height: max-content;
+}
 #headerImg {
   width: 278px;
   height: 115px;
@@ -68,7 +71,7 @@
   background: #ffffff;
   border: 1px solid #484848;
   box-sizing: border-box;
-  border-radius: 4px;
+  border-radius: 24px;
 }
 .listCountry {
   width: 345px;
@@ -122,4 +125,17 @@ color: #484848;
 .ShowMore{
   text-decoration: none;
   margin-left: 45%;
+  color: #090A0A;
+  font-size: 16px;
+  font-style: bold;
+  line-height: 24px;
+  font-family: Inter;
+  fill: solid;
+}
+.locationIcon{
+  position: relative;
+  width: 30px;
+  height: 30px;
+  top: 55px;
+  left: 10px;
 }

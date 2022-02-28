@@ -1,16 +1,13 @@
-import MainPage from './components/mainPage';
+import MainPage from './components/main/mainPage';
 import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
-  useRouteMatch,
-  useParams
 } from "react-router-dom";
-import More from './components/More';
+import More from './components/more/More';
 import { MyProvider } from './context/MyContext';
-import Add from './components/add';
+import Add from './components/add/add';
 function App() {
   return (
     <MyProvider>
